@@ -8,6 +8,8 @@
   justify-content: space-between;
   align-items: center;
 
+  flex-wrap: wrap;
+
   height: 100%;
 }
 
@@ -15,8 +17,9 @@
   display: flex;
   align-items: center;
 
-  padding: .3rem 1rem;
-  gap: 1rem;
+  padding-block: .3rem;
+  padding-inline: clamp(.5rem, 5vw, 1rem);
+  gap: clamp(.3rem, 5vw, 1rem);
 
   background-color: transparent;
 

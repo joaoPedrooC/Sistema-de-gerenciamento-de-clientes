@@ -19,6 +19,6 @@
 }
 
 .font__small {
-  font-size: clam(.7rem, 5vw, 1rem);
+  font-size: clamp(.6rem, 5vw, 1rem);
   font-weight: 400;
 }

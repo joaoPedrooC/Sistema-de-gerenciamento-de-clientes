@@ -6,10 +6,15 @@ interface IClientProviderProps {
   children: ReactNode
 }
 
-export const ClientContext = createContext({})
+interface IClientContext {
+  clients: TClientArray | null
+  setClients: React.Dispatch<React.SetStateAction<TClientArray | null>>
+}
+
+export const ClientContext = createContext({} as IClientContext)
 
 export const ClientProvider = ({ children }: IClientProviderProps) => {
-  const [clients, setClients] = useState<TClientArray>([])
+  const [clients, setClients] = useState<TClientArray | null>(null)
 
   const getClients = async () => {
     try {

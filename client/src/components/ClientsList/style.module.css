@@ -1,0 +1,10 @@
+.clients__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: clamp(1rem, 5vw, 2.5rem);
+  padding-block: clamp(1rem, 5vw, 2rem);
+}

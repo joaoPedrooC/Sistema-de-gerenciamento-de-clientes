@@ -1,0 +1,18 @@
+.client__card {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  gap: .5rem;
+  padding: .3rem 0;
+
+  max-width: 300px;
+
+  border-bottom: 1.5px solid var(--color-black-primary);
+}
+
+@media (min-width: 350px) {
+  .client__card {
+    min-width: 200px;
+  }
+}

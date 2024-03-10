@@ -1,6 +1,6 @@
 export type TClient = {
   id: string
-  name: string
+  nome: string
   email: string
   telefone: string
 }
