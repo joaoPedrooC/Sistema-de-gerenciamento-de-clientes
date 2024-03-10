@@ -9,6 +9,7 @@
   max-width: 300px;
 
   border-bottom: 1.5px solid var(--color-black-primary);
+  word-break: break-all;
 }
 
 @media (min-width: 350px) {

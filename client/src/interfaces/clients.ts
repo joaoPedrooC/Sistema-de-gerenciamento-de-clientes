@@ -5,4 +5,5 @@ export type TClient = {
   telefone: string
 }
 
+export type TClientCreate = Omit<TClient, 'id'>
 export type TClientArray = Array<TClient>

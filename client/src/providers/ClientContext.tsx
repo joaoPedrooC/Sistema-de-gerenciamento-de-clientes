@@ -1,5 +1,5 @@
 import { ReactNode, createContext, useEffect, useState } from "react";
-import { TClientArray } from "../interfaces/clients";
+import { TClient, TClientArray, TClientCreate } from "../interfaces/clients";
 import { api } from "../services/axios";
 
 interface IClientProviderProps {
@@ -7,18 +7,19 @@ interface IClientProviderProps {
 }
 
 interface IClientContext {
-  clients: TClientArray | null
-  setClients: React.Dispatch<React.SetStateAction<TClientArray | null>>
+  clients: TClientArray
+  setClients: React.Dispatch<React.SetStateAction<TClientArray>>
+  createClient: (clientInfo: TClientCreate) => Promise<void>
 }
 
 export const ClientContext = createContext({} as IClientContext)
 
 export const ClientProvider = ({ children }: IClientProviderProps) => {
-  const [clients, setClients] = useState<TClientArray | null>(null)
+  const [clients, setClients] = useState<TClientArray>([])
 
   const getClients = async () => {
     try {
-      const { data } = await api.get<TClientArray>('/clients/')
+      const { data } = await api.get<TClientArray>('/clients')
       setClients(data)
     } catch (error) {
       console.log(error);
@@ -29,8 +30,17 @@ export const ClientProvider = ({ children }: IClientProviderProps) => {
     getClients()
   }, [])
 
+  const createClient = async (clientInfo: TClientCreate) => {
+    try {
+      const { data } = await api.post<TClient>('/clients', clientInfo)
+      setClients([...clients, data])
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
-    <ClientContext.Provider value={{ clients, setClients }}>
+    <ClientContext.Provider value={{ clients, setClients, createClient }}>
       { children }
     </ClientContext.Provider>
   )
