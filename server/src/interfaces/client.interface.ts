@@ -6,3 +6,9 @@ export type TClient = {
 }
 
 export type TClientCreate = Omit<TClient, 'id'>
+
+export type TGetClientParams = {
+  name?: string
+  email?: string
+  telefone?: string
+}
