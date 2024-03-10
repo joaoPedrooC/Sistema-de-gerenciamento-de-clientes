@@ -1,0 +1,40 @@
+.header__container {
+  height: 4.625rem;
+  box-shadow: 0px 0px 16px 2px var(--color-black-secondary);
+}
+
+.header__container > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 100%;
+}
+
+.register__button {
+  display: flex;
+  align-items: center;
+
+  padding: .3rem 1rem;
+  gap: 1rem;
+
+  background-color: transparent;
+
+  border: 1px solid var(--color-black-secondary);
+  border-radius: 4px;
+
+  cursor: pointer;
+  transform: scale(.8);
+
+  transition: ease 1s;
+  outline: none;
+}
+
+.register__button:hover {
+  transform: scale(1);
+}
+
+.register__button > svg {
+  width: 25px;
+  height: 25px;
+}
