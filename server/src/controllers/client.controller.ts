@@ -18,4 +18,10 @@ export class ClientController {
 
     return res.status(200).json(clients)
   }
+
+  async getRoute(req: Request, res: Response): Promise<Response> {
+    const orderedClients = await this.clientService.getRoute()
+
+    return res.status(200).json(orderedClients)
+  }
 }

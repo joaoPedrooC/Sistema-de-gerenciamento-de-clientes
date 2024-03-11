@@ -10,3 +10,4 @@ export const clientRouter: Router = Router()
 
 clientRouter.post('/', validateBodyMiddleware(ClientCreateSchema), verifyClientEmailMiddleware, verifyClientPhoneMiddleware, verifyClientCoordinates, (req: Request, res: Response) => clientController.create(req, res))
 clientRouter.get('/', (req: Request, res: Response) => clientController.list(req, res))
+clientRouter.get('/route', (req: Request, res: Response) => clientController.getRoute(req, res))
