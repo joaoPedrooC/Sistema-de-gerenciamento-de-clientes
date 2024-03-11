@@ -6,10 +6,17 @@
   gap: .5rem;
   padding: .3rem 0;
 
-  max-width: 300px;
+  max-width: 100%;
 
   border-bottom: 1.5px solid var(--color-black-primary);
   word-break: break-all;
+
+  z-index: -1;
+}
+
+.client__card > div {
+  display: flex;
+  gap: 1.5rem;
 }
 
 @media (min-width: 350px) {

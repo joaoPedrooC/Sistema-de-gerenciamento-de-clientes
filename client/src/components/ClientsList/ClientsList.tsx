@@ -18,7 +18,7 @@ export const ClientsList = () => {
 				? clients.map(client => <ClientCard client={client} key={client.id} />)
 				: null}
 			{clients.length === 0 ? (
-				<h1 className='fonts font__primary'>
+				<h1 className='fonts font__medium'>
 					Nenhum cliente cadastrado até o momento...
 				</h1>
 			) : null}
