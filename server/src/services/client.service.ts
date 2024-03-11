@@ -49,20 +49,20 @@ export class ClientService {
     const clientsArray: Array<TClient> = clients.rows
 		const orderedClients: Array<TClient> = []
 
-		while (clients.rows.length > 0) {
+		while (clientsArray.length > 0) {
 			const getDistancesFromIndex = clientsArray.map(readingClient => {
         const coordinateX = orderedClients.length > 0
 						? orderedClients[orderedClients.length - 1].coordinate_x
-						: undefined
+						: 0
         const coordinateY = orderedClients.length > 0
             ? orderedClients[orderedClients.length - 1].coordinate_y
-            : undefined
+            : 0
 
 				return {
 					...readingClient,
 					distance: Math.sqrt(
-						Math.pow(readingClient.coordinate_x - (coordinateX ? coordinateX : 0), 2) +
-            Math.pow(readingClient.coordinate_y - (coordinateY ? coordinateY : 0), 2)
+						Math.pow(readingClient.coordinate_x - coordinateX, 2) +
+            Math.pow(readingClient.coordinate_y - coordinateY, 2)
 					),
 				}
 			})
