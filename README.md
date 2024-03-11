@@ -32,6 +32,10 @@ Ainda no diretório ./server, rode o seguinte comando
 > npm run dev
 ```
 
+### Link do vídeo explicando o que foi desenvolvido:
+
+> https://drive.google.com/file/d/1xDRUbTp9T0vZNwjvyfWzrxbd_SeTsME9/view?usp=sharing
+
 ## Versões das tecnologias utilizadas
 
 1. **Node** v18.17.1
