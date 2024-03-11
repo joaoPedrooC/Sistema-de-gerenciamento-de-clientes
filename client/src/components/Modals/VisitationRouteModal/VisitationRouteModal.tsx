@@ -16,8 +16,8 @@ export const VisitationRouteModal = ({ setIsOpen }: IVisitationRouteModalProps) 
   }, [])
 
   return (
-    <div className={styles.dialog__background} role="dialog">
-      <div>
+    <div className={`${styles.dialog__background} animate__animated animate__fadeIn`} role="dialog">
+      <div className='animate__animated animate__fadeInDown'>
         <div className={styles.dialog__header}>
           <h3 className='fonts font__medium--bold'>Rota de visitação</h3>
           <button onClick={() => setIsOpen(false)}>

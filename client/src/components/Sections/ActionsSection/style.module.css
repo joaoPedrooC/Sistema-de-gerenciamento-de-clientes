@@ -5,6 +5,8 @@
 
   flex-wrap: wrap;
   padding: 1rem 0;
+  
+  z-index: -1;
 }
 
 .actions__section > button {

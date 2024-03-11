@@ -4,6 +4,7 @@
   align-items: center;
 
   gap: 1rem;
+  z-index: 1;
 }
 
 .createClient__form > button {

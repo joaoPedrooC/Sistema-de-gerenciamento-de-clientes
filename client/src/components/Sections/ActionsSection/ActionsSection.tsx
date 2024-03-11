@@ -8,7 +8,7 @@ export const ActionsSection = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   return (
-    <section className={`${styles.actions__section} animate__animated animate__fadeIn`}>
+    <section className={styles.actions__section}>
       <SearchForm />
       <button className="fonts font__small" onClick={() => setIsOpen(true)}>Visualizar rotas de visitação</button>
       { isOpen ? <VisitationRouteModal setIsOpen={setIsOpen} /> : null }
