@@ -12,6 +12,11 @@
   word-break: break-all;
 }
 
+.client__card > div {
+  display: flex;
+  gap: 1.5rem;
+}
+
 @media (min-width: 350px) {
   .client__card {
     min-width: 200px;

@@ -13,6 +13,6 @@ CREATE TABLE IF NOT EXISTS client (
   "nome" VARCHAR(50) NOT NULL,
   "email" VARCHAR(50) NOT NULL UNIQUE,
   "telefone" CHAR(11) NOT NULL UNIQUE,
-  "coordinate_x" INTEGER NOT NULL,
-  "coordinate_y" INTEGER NOT NULL
+  "coordinate_x" FLOAT NOT NULL,
+  "coordinate_y" FLOAT NOT NULL
 );
