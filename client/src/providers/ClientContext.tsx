@@ -13,6 +13,8 @@ interface IClientContext {
   filteredClients: TClientArray | null
   setFilteredClients: React.Dispatch<React.SetStateAction<TClientArray | null>>
   filterClients: (filterInfo: TReadClientFilter) => Promise<void>
+  getVisitationRoute: () => Promise<void>
+  visitationRoute: TClientArray | undefined
 }
 
 export const ClientContext = createContext({} as IClientContext)
@@ -20,6 +22,7 @@ export const ClientContext = createContext({} as IClientContext)
 export const ClientProvider = ({ children }: IClientProviderProps) => {
   const [clients, setClients] = useState<TClientArray>([])
   const [filteredClients, setFilteredClients] = useState<TClientArray | null>(null)
+  const [visitationRoute, setVisitationRoute] = useState<TClientArray | undefined>(undefined)
 
   const getClients = async () => {
     try {
@@ -53,8 +56,17 @@ export const ClientProvider = ({ children }: IClientProviderProps) => {
     }
   }
 
+  const getVisitationRoute = async () => {
+    try {
+      const { data } = await api.get<TClientArray>('/clients/route')
+      setVisitationRoute(data)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
-    <ClientContext.Provider value={{ clients, setClients, createClient, filteredClients, filterClients, setFilteredClients }}>
+    <ClientContext.Provider value={{ clients, setClients, createClient, filteredClients, filterClients, setFilteredClients, getVisitationRoute, visitationRoute }}>
       { children }
     </ClientContext.Provider>
   )

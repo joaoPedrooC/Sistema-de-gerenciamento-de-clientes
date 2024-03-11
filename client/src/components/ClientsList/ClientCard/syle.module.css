@@ -6,7 +6,7 @@
   gap: .5rem;
   padding: .3rem 0;
 
-  max-width: 300px;
+  max-width: 100%;
 
   border-bottom: 1.5px solid var(--color-black-primary);
   word-break: break-all;

@@ -1,3 +1,24 @@
 .actions__section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  flex-wrap: wrap;
   padding: 1rem 0;
+}
+
+.actions__section > button {
+  background-color: transparent;
+  border-bottom: 1px solid var(--color-black-secondary);
+
+  outline: none;
+  cursor: pointer;
+
+  padding-top: 1.5rem;
+}
+
+@media (min-width: 956px) {
+  .actions__section > button {
+    padding: .6rem 0;
+  }
 }

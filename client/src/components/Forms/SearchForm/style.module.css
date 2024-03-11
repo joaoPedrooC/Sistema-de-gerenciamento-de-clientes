@@ -2,6 +2,8 @@
   display: flex;
   align-items: center;
 
+  width: 100%;
+
   flex-wrap: wrap;
   gap: clamp(.5rem, 5vw, 2rem);
 }
@@ -40,4 +42,10 @@
 .clear__filters {
   background-color: transparent;
   cursor: pointer;
+}
+
+@media (min-width: 550px) {
+  .searchForm__container {
+    width: 700px;
+  }
 }

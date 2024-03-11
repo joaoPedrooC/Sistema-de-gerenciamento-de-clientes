@@ -1,0 +1,25 @@
+.route__card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: .3rem;
+  word-break: break-all;
+}
+
+.card__coordinates {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.route__line {
+  display: flex;
+  align-self: center;
+
+  width: 2px;
+  min-height: 3.75rem;
+  
+  background-color: var(--color-black-secondary);
+  border-radius: 8px;
+}
