@@ -1,5 +1,5 @@
 import { ReactNode, createContext, useEffect, useState } from "react";
-import { TClient, TClientArray, TClientCreate } from "../interfaces/clients";
+import { TClient, TClientArray, TClientCreate, TReadClientFilter } from "../interfaces/clients";
 import { api } from "../services/axios";
 
 interface IClientProviderProps {
@@ -10,12 +10,16 @@ interface IClientContext {
   clients: TClientArray
   setClients: React.Dispatch<React.SetStateAction<TClientArray>>
   createClient: (clientInfo: TClientCreate) => Promise<void>
+  filteredClients: TClientArray | null
+  setFilteredClients: React.Dispatch<React.SetStateAction<TClientArray | null>>
+  filterClients: (filterInfo: TReadClientFilter) => Promise<void>
 }
 
 export const ClientContext = createContext({} as IClientContext)
 
 export const ClientProvider = ({ children }: IClientProviderProps) => {
   const [clients, setClients] = useState<TClientArray>([])
+  const [filteredClients, setFilteredClients] = useState<TClientArray | null>(null)
 
   const getClients = async () => {
     try {
@@ -34,13 +38,23 @@ export const ClientProvider = ({ children }: IClientProviderProps) => {
     try {
       const { data } = await api.post<TClient>('/clients', clientInfo)
       setClients([...clients, data])
+      setFilteredClients(null)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const filterClients = async (filterInfo: TReadClientFilter) => {
+    try {
+      const { data } = await api.get<TClientArray>(`/clients?${filterInfo.type}=${filterInfo.value}`)
+      setFilteredClients(data)
     } catch (error) {
       console.log(error);
     }
   }
 
   return (
-    <ClientContext.Provider value={{ clients, setClients, createClient }}>
+    <ClientContext.Provider value={{ clients, setClients, createClient, filteredClients, filterClients, setFilteredClients }}>
       { children }
     </ClientContext.Provider>
   )

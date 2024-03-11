@@ -7,3 +7,7 @@ export type TClient = {
 
 export type TClientCreate = Omit<TClient, 'id'>
 export type TClientArray = Array<TClient>
+export type TReadClientFilter = {
+  type: 'nome' | 'email' | 'telefone'
+  value: string
+}

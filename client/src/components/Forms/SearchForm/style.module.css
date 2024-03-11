@@ -1,0 +1,43 @@
+.searchForm__container {
+  display: flex;
+  align-items: center;
+
+  flex-wrap: wrap;
+  gap: clamp(.5rem, 5vw, 2rem);
+}
+
+.searchForm__inputContainer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  
+  width: 100%;
+  max-width: 400px;
+
+  height: 50px;
+}
+
+.searchForm__inputContainer div {
+  width: clamp(70%, 50vw, 90%);
+}
+
+.submit__button {
+  background-color: transparent;
+}
+
+.submit__button > svg {
+  min-width: clamp(25px, 5vw, 40px);
+  min-height: clamp(25px, 5vw, 40px);
+  
+  cursor: pointer;
+  transition: transform 1s;
+}
+
+.submit__button > svg:hover {
+  transform: rotateY(180deg);
+}
+
+.clear__filters {
+  background-color: transparent;
+  cursor: pointer;
+}
