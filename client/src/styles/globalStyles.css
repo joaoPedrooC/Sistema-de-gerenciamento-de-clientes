@@ -1,0 +1,13 @@
+:root {
+  --color-black-primary: #212529;
+  --color-black-secondary: rgba(33, 37, 41, 0.5);
+
+  --color-white-primary: #fff;
+  --color-white-secondary: #f1f5f9;
+
+  --font-primary: 'Poppins', sans-serif;
+}
+
+body:has(div[role='dialog']) {
+  overflow: hidden;
+}

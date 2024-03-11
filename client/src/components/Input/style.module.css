@@ -1,0 +1,21 @@
+.input__container {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+
+  width: 100%;
+}
+
+.input__container > input {
+  border-bottom: 1px solid var(--color-black-secondary);
+  padding: .6rem .5rem;
+
+  background-color: transparent;
+
+  outline: none;
+}
+
+.input__container > span {
+  color: #c92a2a;
+}

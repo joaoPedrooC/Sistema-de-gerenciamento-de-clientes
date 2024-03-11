@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS client (
+  "id" UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  "nome" VARCHAR(50) NOT NULL,
+  "email" VARCHAR(50) NOT NULL UNIQUE,
+  "telefone" CHAR(11) NOT NULL UNIQUE
+);

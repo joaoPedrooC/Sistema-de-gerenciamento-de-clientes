@@ -1,0 +1,44 @@
+.dialog__background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-color: var(--color-black-secondary);
+
+  width: 100vw;
+  height: 100vh;
+
+  padding: 0 1rem;
+}
+
+.dialog__background > div {
+  width: 100%;
+  max-width: 600px;
+
+  border-radius: 8px;
+  background-color: var(--color-white-primary);
+
+  padding: 1rem;
+}
+
+.dialog__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dialog__header > button {
+  background-color: transparent;
+  outline: none;
+
+  cursor: pointer;
+}
+
+.dialog__header > button > svg {
+  width: clamp(18px, 5vw, 25px);
+  height: clamp(18px, 5vw, 25px);
+}

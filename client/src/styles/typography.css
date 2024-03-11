@@ -1,0 +1,24 @@
+.fonts {
+  font-family: 'Poppins';
+  color: var(--color-black-primary);
+}
+
+.font__large {
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  font-weight: 400;
+}
+
+.font__medium--bold {
+  font-size: clamp(.9rem, 5vw, 1.25rem);
+  font-weight: 600;
+}
+
+.font__medium {
+  font-size: clamp(.9rem, 5vw, 1.25rem);
+  font-weight: 400;
+}
+
+.font__small {
+  font-size: clamp(.6rem, 5vw, 1rem);
+  font-weight: 400;
+}
