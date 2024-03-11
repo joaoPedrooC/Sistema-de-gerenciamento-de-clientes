@@ -10,6 +10,8 @@
 
   border-bottom: 1.5px solid var(--color-black-primary);
   word-break: break-all;
+
+  z-index: -1;
 }
 
 .client__card > div {

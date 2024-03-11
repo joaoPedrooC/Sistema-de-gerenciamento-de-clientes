@@ -7,7 +7,7 @@ export const Header = () => {
 	const [isOpen, setIsOpen] = useState<boolean>(false)
 
 	return (
-		<header className={styles.header__container}>
+		<header className={`${styles.header__container} animate__animated animate__fadeInDown`}>
 			<div className='container'>
 				<h3 className='fonts font__medium--bold'>System</h3>
 				<nav>
